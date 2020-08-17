@@ -20,13 +20,19 @@ namespace Variel.ImageService.Data
 
         public string[] AllowedOrigins { get; set; }
 
+        public bool UseDirectUrlRedirection { get; set; }
         public string StorageProviderName { get; set; }
         public string StorageProviderSettingsJson { get; set; }
+
+        public Dictionary<string, ProcessingPreset> ProcessingPresets { get; set; } = new Dictionary<string, ProcessingPreset>();
 
 
         public void Configure(EntityTypeBuilder<Application> builder)
         {
             builder.Property(app => app.AllowedOrigins)
+                   .HasJsonConversion();
+
+            builder.Property(app => app.ProcessingPresets)
                    .HasJsonConversion();
         }
     }
