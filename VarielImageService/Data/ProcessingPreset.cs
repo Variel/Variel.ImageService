@@ -7,17 +7,18 @@ namespace Variel.ImageService.Data
 {
     public class ProcessingPreset
     {
-        public int Width { get; set; }
-        public int Height { get; set; }
-        public float Quality { get; set; }
-        public ResizeOption ResizeOption { get; set; }
+        public int? Width { get; set; }
+        public int? Height { get; set; }
+        public float? Quality { get; set; }
+        public ResizeOption? ResizeOption { get; set; }
+        public bool? PreserveAlpha { get; set; }
     }
 
     public enum ResizeOption
     {
+        None,
         StretchToFill,
         AspectFill,
-        AspectFit,
-        Center
+        AspectFit
     }
 }

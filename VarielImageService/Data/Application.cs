@@ -26,6 +26,11 @@ namespace Variel.ImageService.Data
 
         public Dictionary<string, ProcessingPreset> ProcessingPresets { get; set; } = new Dictionary<string, ProcessingPreset>();
 
+        public ICollection<MasterImage> MasterImages { get; set; } = new HashSet<MasterImage>();
+
+
+        public DateTimeOffset CreatedAt { get; set; } = DateTimeOffset.UtcNow;
+
 
         public void Configure(EntityTypeBuilder<Application> builder)
         {

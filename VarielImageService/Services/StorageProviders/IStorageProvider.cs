@@ -8,7 +8,7 @@ namespace Variel.ImageService.Services.StorageProviders
 {
     public interface IStorageProvider
     {
-        public void Initialize(string settingsJson);
-        public Task<string> UploadAsync(string containerName, string fileName, Stream stream);
+        void Initialize(string settingsJson);
+        Task<string> UploadAsync(string containerName, string fileName, Stream stream);
     }
 }

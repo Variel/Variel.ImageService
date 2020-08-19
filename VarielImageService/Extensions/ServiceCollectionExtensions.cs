@@ -14,7 +14,7 @@ namespace Variel.ImageService.Extensions
         public static void AddStorageProviders(this IServiceCollection self)
         {
             var providerTypes = Assembly.GetExecutingAssembly().GetTypes()
-                .Where(t => typeof(IStorageProvider).IsAssignableFrom(t));
+                .Where(t => typeof(IStorageProvider).IsAssignableFrom(t) && t != typeof(IStorageProvider));
 
             foreach (var t in providerTypes)
             {

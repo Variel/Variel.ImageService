@@ -29,7 +29,7 @@ namespace Variel.ImageService.Services
             _serviceProvider = provider;
         }
 
-        public async Task<IStorageProvider> GetProviderAsync(string providerName, string settingsJson)
+        public IStorageProvider GetProviderAsync(string providerName, string settingsJson)
         {
             if (!_providerDictionary.TryGetValue(providerName, out var providerType))
             {
@@ -37,7 +37,7 @@ namespace Variel.ImageService.Services
             }
 
             var provider = (IStorageProvider) _serviceProvider.GetService(providerType);
-            await provider.Initialize(settingsJson);
+            provider.Initialize(settingsJson);
 
             return provider;
         }

@@ -6,7 +6,7 @@ namespace Variel.ImageService.Data
     public class DatabaseContext : DbContext
     {
         public DbSet<Application> Applications { get; set; }
-        public DbSet<>
+        public DbSet<MasterImage> MasterImages { get; set; }
 
         public DatabaseContext(DbContextOptions<DatabaseContext> options) : base(options) { }
 

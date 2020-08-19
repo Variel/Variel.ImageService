@@ -22,5 +22,7 @@ namespace Variel.ImageService.Data
 
         public string ApplicationId { get; set; }
         public Application Application { get; set; }
+
+        public DateTimeOffset CreatedAt { get; set; } = DateTimeOffset.UtcNow;
     }
 }
